@@ -1,0 +1,65 @@
+
+<div class="container">
+  <carousel [interval]="myInterval" [(activeSlide)]="activeSlideIndex" >
+    <slide *ngFor="let slide of slides; let index=index">
+      <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+      <div class="carousel-caption">
+        <h4>Slide {{index}}</h4>
+        <p>{{slide.text}}</p>
+      </div>
+    </slide>
+  </carousel>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <carousel>
+        <slide>
+          <img src="assets/k9-police-car.jpg" alt="first slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="assets/PoliceDog850.jpg" alt="second slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Second slide label</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </slide>
+        <slide>
+          <img src="assets/k9-police-car.jpg" alt="third slide" style="display: block; width: 100%;">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </slide>
+      </carousel>
+</div>
+<div class="container">
+   <h1>updated news</h1>
+</div> -->
