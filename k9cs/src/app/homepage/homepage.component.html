@@ -8,8 +8,23 @@
         <p>{{slide.text}}</p>
       </div>
     </slide>
-  </carousel>
-</div>
+   </carousel>
+  </div>
+
+<h2>Our Most Recent Blogs!</h2>
+
+  <div class="container">
+    <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
+      <img src="{{b.image}}" class="card-img-top" >
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">{{b.text}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+
 
 
 

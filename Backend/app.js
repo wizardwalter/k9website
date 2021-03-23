@@ -1,16 +1,18 @@
 const config = require ("./config/config");
+require('./Models/db');
 const express = require("express");
 const cors = require ("cors");
 const passport = require("passport");
-require('./Models/db')
+const blogRoute = require("./Routes/blog");
+const bodyParser = require("body-parser");
+
 
 var app = express();
-
-var posts = require("./Controllers/homepage");
-
-
+app.use(bodyParser.json());
 app.use(cors());
-app.use(passport.initialize())
+app.use(passport.initialize());
+
+app.use("/blog", blogRoute);
 
 
 

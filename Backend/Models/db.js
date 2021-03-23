@@ -10,3 +10,5 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser : true, useUnifiedTop
            console.log("Error in connection : " + JSON.stringify(err, undefined, 2)); 
        }
 });
+
+require('./blog');
