@@ -8,12 +8,13 @@ import { BlogServiceService } from '../shared/blog-service.service';
 })
 export class HomepageComponent implements OnInit {
  
-  myInterval = 2500;
+  myInterval = 2750;
   activeSlideIndex = 0;
   blogs;
   date;
   image;
   text;
+  title;
 
  
   slides = [
@@ -24,12 +25,18 @@ export class HomepageComponent implements OnInit {
   constructor(public blogService: BlogServiceService ) { }
 
   ngOnInit(): void {
-    this.blogService.getBlog().subscribe(
+    this.blogService.getBlogs().subscribe(
     res=> {
       this.blogs = res['blogs'];
       console.log(this.blogs)
     })
   }
   
+  // getBlog(id){
+  //   this.blogService.getBlog(id).subscribe(res => {
+  //     this.blogs = res['blogs/' + id]
+  //     console.log(this.blogs);
+  //   })
+  // }
 
 }

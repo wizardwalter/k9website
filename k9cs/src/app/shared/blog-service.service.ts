@@ -8,9 +8,12 @@ export class BlogServiceService {
   constructor(public http: HttpClient) { }
   baseUrl = "http://localhost:8080"
 
-  getBlog(){
+  getBlogs(){
     console.log('connected')
-    return this.http.get(this.baseUrl + "/blog/get")
+    return this.http.get(this.baseUrl + "/blog/blogs")
   }
-  
+  getBlog(id){
+    console.log(id)
+    return this.http.get(this.baseUrl + "/blog/blogs/"+ id)
+  }
 }

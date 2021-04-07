@@ -3,6 +3,18 @@ h2{
 }
 
 carousel img{
-    margin-top: 7rem;
+    margin-top: 2vh;
     
+}
+
+#container-2{
+    background-color: whitesmoke;
+
+}
+
+#divWithBlogs{
+    border-bottom: dotted;
+    margin-bottom: 7vh;
+    height: 40vh;
+
 }

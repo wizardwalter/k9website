@@ -12,7 +12,7 @@ export class BlogComponent implements OnInit {
   constructor(public blogService: BlogServiceService) { }
 
   ngOnInit(): void {
-    this.blogService.getBlog().subscribe(
+    this.blogService.getBlogs().subscribe(
     res=> {
       this.blogs = res['blogs'];
       console.log(res);
@@ -21,4 +21,5 @@ export class BlogComponent implements OnInit {
     })
   }
 
+  
 }

@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BlogComponent } from './blog/blog.component';
+import { BlogByIdComponent } from './blog-by-id/blog-by-id.component';
 
 
  
@@ -20,6 +21,7 @@ import { BlogComponent } from './blog/blog.component';
     HomepageComponent,
     NavbarComponent,
     BlogComponent,
+    BlogByIdComponent,
     
   ],
   imports: [

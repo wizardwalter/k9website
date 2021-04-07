@@ -1,7 +1,11 @@
-<div>
-    {{blogs}}
-    <!-- {{blogs.image}}
-    {{blogs.text}}
-    {{blogs.author}}
-    {{blogs.date}} -->
+<div class="container-fluid">
+  <div class="container">
+    <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
+      <img src="{{b.image}}" class="card-img-top">
+      <div class="card-body">
+        <p class="card-text">{{b.text}}</p>
+        <p>posted by: {{b.author}}, {{b.date}}</p>
+      </div>
+    </div>
+  </div>
 </div>

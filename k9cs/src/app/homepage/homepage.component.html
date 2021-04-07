@@ -13,16 +13,30 @@
 
 <h2>Our Most Recent Blogs!</h2>
 
-  <div class="container">
-    <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
-      <img src="{{b.image}}" class="card-img-top" >
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">{{b.text}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div id="container-2" class="container">
+    <div id="divWithBlogs" class="row justify-content-around align-items-center" *ngFor="let b of blogs">
+      <div class="col-6">
+        <div class="row justify-content-center">
+          <img src="{{b.image}}" style="width: 35vh; height: 30vh;">
+        </div>  
+      </div>
+        <div class="col-6 ">
+          <div class="row align-items-start justify-content-center">
+            <h5>{{b.title}}</h5>
+          </div>
+          <div class="row align-items-start justify-content-center">
+            <p>{{b.text}}</p>
+          </div>
+          <div class="row align-items-end justify-content-center">
+            <a class="btn btn-primary btn-sm" href="/blogs/{{b._id}}">Check out {{b.title}}</a>
+          </div>
+          
+        </div>
+          
+       
       </div>
     </div>
-  </div>
+  
 
 
 
