@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { BlogComponent } from './blog/blog.component';
 import { BlogByIdComponent } from './blog-by-id/blog-by-id.component';
+import { DogsComponent } from './dogs/dogs.component';
+import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
 
 
  
@@ -22,6 +24,8 @@ import { BlogByIdComponent } from './blog-by-id/blog-by-id.component';
     NavbarComponent,
     BlogComponent,
     BlogByIdComponent,
+    DogsComponent,
+    DogsByIdComponent,
     
   ],
   imports: [

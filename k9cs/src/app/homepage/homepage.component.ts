@@ -7,7 +7,7 @@ import { BlogServiceService } from '../shared/blog-service.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
- 
+
   myInterval = 2750;
   activeSlideIndex = 0;
   blogs;
@@ -16,11 +16,11 @@ export class HomepageComponent implements OnInit {
   text;
   title;
 
- 
+
   slides = [
-    {image: 'assets/k9-police-car.jpg', text: "lorem ipsum blah blah blah"},
-    {image: 'assets/PoliceDog850.jpg', text: "lorem ipsum blah blah blah"},
-    {image: 'assets/k9-police-car.jpg', text: "lorem ipsum blah blah blah"},
+    {image: 'https://res.cloudinary.com/walterscloudinary/image/upload/v1620428471/k9cs/blue_border_patrol_fjjqcy.jpg', text: "Why we Raise, Train, and Donate K9s", header:"About Us", link:"http://localhost:4200/aboutus"},
+    {image: 'assets/PoliceDog850.jpg', text: "lorem ipsum blah blah blah", header: ""},
+    {image: 'assets/k9-police-car.jpg', text: "lorem ipsum blah blah blah", header:""},
   ];
   constructor(public blogService: BlogServiceService ) { }
 
@@ -31,7 +31,7 @@ export class HomepageComponent implements OnInit {
       console.log(this.blogs)
     })
   }
-  
+
   // getBlog(id){
   //   this.blogService.getBlog(id).subscribe(res => {
   //     this.blogs = res['blogs/' + id]

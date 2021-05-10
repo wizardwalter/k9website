@@ -2,19 +2,32 @@ h2{
     text-align: center;
 }
 
+
 carousel img{
     margin-top: 2vh;
-    
+    height: 80vh;
+    width: 90ch;
 }
 
-#container-2{
-    background-color: whitesmoke;
-
+a{
+  color: white;
 }
 
-#divWithBlogs{
-    border-bottom: dotted;
-    margin-bottom: 7vh;
-    height: 40vh;
-
+.card{
+  width: 50%;
+  height: auto;
 }
+.card-img-top{
+  height: 30vh;
+  width: auto;
+}
+
+.card-title{
+  font-style: oblique;
+  font-weight: bold;
+}
+
+#blogs-header{
+  text-decoration: underline;
+}
+

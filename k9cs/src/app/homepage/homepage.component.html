@@ -4,39 +4,32 @@
     <slide *ngFor="let slide of slides; let index=index">
       <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
       <div class="carousel-caption">
-        <h4>Slide {{index}}</h4>
+        <h4>{{slide.header}}</h4>
         <p>{{slide.text}}</p>
+        <button class="btn btn-lg btn-primary"><a href="{{slide.link}}">Click Here</a></button>
       </div>
     </slide>
    </carousel>
   </div>
 
-<h2>Our Most Recent Blogs!</h2>
+<h2 id="blogs-header">Our Most Recent Blogs!</h2>
 
   <div id="container-2" class="container">
-    <div id="divWithBlogs" class="row justify-content-around align-items-center" *ngFor="let b of blogs">
-      <div class="col-6">
-        <div class="row justify-content-center">
-          <img src="{{b.image}}" style="width: 35vh; height: 30vh;">
-        </div>  
-      </div>
-        <div class="col-6 ">
-          <div class="row align-items-start justify-content-center">
-            <h5>{{b.title}}</h5>
+      <div *ngFor="let b of blogs">
+        <div class="row d-flex justify-content-center">
+          <div class="card mb-3">
+            <img src="{{b.image}}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">{{b.title}}</h5>
+              <p class="card-text">{{b.text}}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
           </div>
-          <div class="row align-items-start justify-content-center">
-            <p>{{b.text}}</p>
-          </div>
-          <div class="row align-items-end justify-content-center">
-            <a class="btn btn-primary btn-sm" href="/blogs/{{b._id}}">Check out {{b.title}}</a>
-          </div>
-          
         </div>
-          
-       
       </div>
     </div>
-  
+
+
 
 
 

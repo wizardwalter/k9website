@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require ("cors");
 const passport = require("passport");
 const blogRoute = require("./Routes/blog");
+const dogsRoute = require("./Routes/dogs");
 const bodyParser = require("body-parser");
 
 
@@ -12,17 +13,8 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(passport.initialize());
 
-app.use("/blog", blogRoute);
-
-
-
-
-
-
-
-
-
-
+app.use("/blogs", blogRoute);
+app.use("/dogs", dogsRoute);
 
 
 

@@ -1,11 +1,16 @@
 <div class="container-fluid">
   <div class="container">
-    <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
-      <img src="{{b.image}}" class="card-img-top">
-      <div class="card-body">
-        <p class="card-text">{{b.text}}</p>
-        <p>posted by: {{b.author}}, {{b.date}}</p>
+    <div class="row justify-content-around">
+      <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
+        <img src="{{b.image}}" class="card-img-top">
+        <div class="card-body">
+          <p class="card-title">{{b.title}}</p>
+          <p class="card-text">{{b.text}}</p>
+          <p>posted by: {{b.author}}, {{b.date}}</p>
+          <!-- <button class="btn btn-sm btn-primary" [routerLink]="[b._id]">{{b.title}}</button> -->
+        </div>
       </div>
     </div>
   </div>
 </div>
+

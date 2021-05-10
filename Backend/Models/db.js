@@ -12,3 +12,4 @@ mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser : true, useUnifiedTop
 });
 
 require('./blog');
+require('./dogs');
