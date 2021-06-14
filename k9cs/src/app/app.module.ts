@@ -11,9 +11,12 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogByIdComponent } from './blog-by-id/blog-by-id.component';
 import { DogsComponent } from './dogs/dogs.component';
 import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { CreateBlogComponent } from './create-blog/create-blog.component';
 
 
- 
+
+
 
 
 
@@ -26,16 +29,18 @@ import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
     BlogByIdComponent,
     DogsComponent,
     DogsByIdComponent,
-    
+    AboutUsComponent,
+    CreateBlogComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
-    HttpClientModule 
-    
-    
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

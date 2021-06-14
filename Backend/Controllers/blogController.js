@@ -26,8 +26,7 @@ module.exports.getBlogs = (req,res) =>{
         res.json({blogs:blogs})
     }) 
 };
- //if im projecting _id from my param id and storing that res in blog why does it keep throwing an error and the error i get says it is coming from 
- //my backend but when i use postman i get the response back perfectly fine????? got me tweaking
+
 module.exports.getBlog = (req,res) => {
     Blog.findById(req.params.id)
     .exec((err,blog)=> {
@@ -38,6 +37,30 @@ module.exports.getBlog = (req,res) => {
             res.json({blog:blog});
         }  
     }) 
-    
 }; 
+
+module.exports.editBlog = (req,res) =>{
+    // Once photo upload complete make conditional to check if image = null or not
+    Blog.findByIdAndUpdate(req.params.id,{$set:{
+         _id: req.params.id,
+        title: req.body.title,
+        text: req.body.text
+    }},{new:true})
+    .then(result => {
+        console.log(result);
+        res.status(200).json({
+            message: 'update was a success!',
+            updatedBlog: result
+    });
+    })
+};
+
+module.exports.deleteBlog = (req,res) =>{
+    Blog.deleteOne({_id:req.params.id}).then(result =>{
+        console.log(result);
+        res.status(200).json({message:"blog deleted successfully!"})
+    })
+};
+
+
     

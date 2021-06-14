@@ -1,6 +1,14 @@
 #container-top{
   margin-top: 5vh;
 }
+
 .card-img-top{
   height: 33vh;
+}
+
+
+#map{
+  margin: 25px;
+  width: 40rem;
+  height: 40vh;
 }

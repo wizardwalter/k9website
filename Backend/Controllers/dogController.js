@@ -9,6 +9,8 @@ module.exports.createDogs = (req,res)=>{
    dog.name = req.body.name;
    dog.about = req.body.about;
    dog.date = Date(mongoose.now);
+   dog.coordinates.latitude = req.body.latitude; 
+   dog.coordinates.longtitude = req.body.longtitude;
 
    dog.save((err,doc)=>{
        if(!err){

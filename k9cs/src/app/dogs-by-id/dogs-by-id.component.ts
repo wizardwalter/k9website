@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { DogServiceService } from '../shared/dog-service.service';
+import { environment } from '../_enviroment/env.js';
+import * as mapboxgl from 'mapbox-gl';
+import { Dog } from '../_models/dogModel';
 
 @Component({
   selector: 'app-dogs-by-id',
@@ -8,8 +11,13 @@ import { DogServiceService } from '../shared/dog-service.service';
   styleUrls: ['./dogs-by-id.component.css']
 })
 export class DogsByIdComponent implements OnInit {
+  dog: Dog;
   id;
-  dog;
+  lat: number;
+  lng: number;
+  map: mapboxgl.Map;
+  style = 'mapbox://styles/mapbox/streets-v11';
+
   constructor(public activatedRoute: ActivatedRoute, public dogService: DogServiceService) { }
 
   ngOnInit(): void {
@@ -17,9 +25,25 @@ export class DogsByIdComponent implements OnInit {
       this.id = params.get('id');
       this.dogService.getDog(this.id).subscribe(res => {
         this.dog = res['dog'];
-        console.log(res);
+        this.lng = this.dog.coordinates.longtitude;
+        this.lat = this.dog.coordinates.latitude;
+        this.map = new mapboxgl.Map({
+          accessToken: environment.mapbox.accessToken,
+          container: 'map',
+          style: this.style,
+          zoom: 5,
+          center: [this.dog.coordinates.longtitude, this.dog.coordinates.latitude],
+
+          });
+          // Add map controls
+          this.map.addControl(new mapboxgl.NavigationControl());
+          new mapboxgl.Marker()
+        .setLngLat([this.dog.coordinates.longtitude, this.dog.coordinates.latitude])
+        .addTo(this.map); // add the marker to the map
+          console.log(this.dog);
       })
     })
+
   }
 
 }

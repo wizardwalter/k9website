@@ -11,9 +11,12 @@ export class BlogServiceService {
   getBlogs(){
     console.log('connected')
     return this.http.get(this.baseUrl + "/blogs")
-  }
+  };
+
   getBlog(id){
     console.log(id)
     return this.http.get(this.baseUrl + "/blogs/"+ id)
-  }
+  };
+
+  
 }
