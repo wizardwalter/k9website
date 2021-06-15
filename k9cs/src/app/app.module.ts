@@ -13,6 +13,7 @@ import { DogsComponent } from './dogs/dogs.component';
 import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
+import {ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -38,6 +39,8 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     HttpClientModule,

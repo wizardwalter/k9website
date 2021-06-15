@@ -1,4 +1,4 @@
-export interface  {
-  image: string,
+// export interface  {
+//   image: string,
 
-}
+// }
