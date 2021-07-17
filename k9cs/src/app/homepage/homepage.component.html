@@ -18,7 +18,10 @@
       <div *ngFor="let b of blogs">
         <div class="row d-flex justify-content-center">
           <div class="card mb-3">
-            <img src="{{b.image}}" class="card-img-top">
+            <cl-image public-id="{{b.image}}">
+              <cl-transformation height="281px" width="750px"></cl-transformation>
+
+          </cl-image>
             <div class="card-body">
               <h5 class="card-title">{{b.title}}</h5>
               <p class="card-text">{{b.text}}</p>

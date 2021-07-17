@@ -14,6 +14,10 @@ import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import {ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
+import { LoginComponent } from './login/login.component';
+
 
 
 
@@ -32,6 +36,7 @@ import {ReactiveFormsModule, FormsModule } from '@angular/forms';
     DogsByIdComponent,
     AboutUsComponent,
     CreateBlogComponent,
+    LoginComponent,
 
 
 
@@ -44,6 +49,7 @@ import {ReactiveFormsModule, FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     HttpClientModule,
+    CloudinaryModule.forRoot({Cloudinary},{cloud_name:"walterscloudinary"} as CloudinaryConfiguration),
   ],
   providers: [],
   bootstrap: [AppComponent]

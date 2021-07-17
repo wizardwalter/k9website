@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row justify-content-around">
       <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
-        <img src="{{b.image}}" class="card-img-top">
+        <!-- <img src="{{b.image}}" class="card-img-top"> -->
+        <cl-image public-id="{{b.image}}">
+          <cl-transformation height="281px" width="750px"></cl-transformation>
+
+      </cl-image>
         <div class="card-body">
           <p class="card-title">{{b.title}}</p>
           <p class="card-text">{{b.text}}</p>
