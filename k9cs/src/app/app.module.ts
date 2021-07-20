@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -13,17 +13,14 @@ import { DogsComponent } from './dogs/dogs.component';
 import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
-import {ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {
+  CloudinaryModule,
+  CloudinaryConfiguration,
+} from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
 import { LoginComponent } from './login/login.component';
-
-
-
-
-
-
-
+import { LoginInterceptor } from './login/login-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,9 +34,6 @@ import { LoginComponent } from './login/login.component';
     AboutUsComponent,
     CreateBlogComponent,
     LoginComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -49,9 +43,13 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     HttpClientModule,
-    CloudinaryModule.forRoot({Cloudinary},{cloud_name:"walterscloudinary"} as CloudinaryConfiguration),
+    CloudinaryModule.forRoot({ Cloudinary }, {
+      cloud_name: 'walterscloudinary',
+    } as CloudinaryConfiguration),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

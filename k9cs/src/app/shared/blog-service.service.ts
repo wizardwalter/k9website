@@ -1,26 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from '../_models/blog';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogServiceService {
+  constructor(public http: HttpClient, public router: Router) {}
+  baseUrl = 'http://localhost:8080';
 
-  constructor(public http: HttpClient, public router: Router) { }
-  baseUrl = "http://localhost:8080"
+  getBlogs() {
+    console.log('connected');
+    return this.http.get(this.baseUrl + '/blogs');
+  }
 
-  getBlogs(){
-    console.log('connected')
-    return this.http.get(this.baseUrl + "/blogs")
-  };
-
-  getBlog(id){
-    console.log(id)
-    return this.http.get<{_id: string, title: string, text: string, author: string}>(this.baseUrl + "/blogs/"+ id)
-  };
+  getBlog(id) {
+    console.log(id);
+    return this.http.get<{
+      _id: string;
+      title: string;
+      text: string;
+      author: string;
+    }>(this.baseUrl + '/blogs/' + id);
+  }
 
   // addBlog(title: string, text: string, author: string, image:string, formData){
   //   const blogData = {
@@ -35,8 +39,7 @@ export class BlogServiceService {
   //   })
   // };
 
-  addBlog(userObj): Observable<any>{
-    return this.http.post(this.baseUrl + "/blogs/create", userObj)
+  addBlog(userObj): Observable<any> {
+    return this.http.post(this.baseUrl + '/blogs/create', userObj);
   }
-
 }

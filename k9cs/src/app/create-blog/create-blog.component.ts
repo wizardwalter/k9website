@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { BlogServiceService } from '../shared/blog-service.service';
 import { Blog } from '../_models/blog';
 
@@ -18,7 +18,7 @@ export class CreateBlogComponent implements OnInit {
 
 
 
-  constructor(public route: ActivatedRoute, public blogService: BlogServiceService) { }
+  constructor(public route: ActivatedRoute, public blogService: BlogServiceService, public router: Router) { }
 
   ngOnInit(): void {
 
@@ -57,6 +57,7 @@ export class CreateBlogComponent implements OnInit {
     formData.append("userObj", JSON.stringify(userObj));
     console.log(formData)
     this.blogService.addBlog(formData).subscribe();
+    this.router.navigateByUrl("/blogs");
 
   }
   //   onSubmit(form: NgForm){

@@ -7,6 +7,7 @@ import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { DogsByIdComponent } from './dogs-by-id/dogs-by-id.component';
 import { DogsComponent } from './dogs/dogs.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'dogs', component: DogsComponent},
   {path: 'dogs/:id', component: DogsByIdComponent},
   {path: 'about', component: AboutUsComponent},
-  {path: 'blogs/create', component: CreateBlogComponent}
+  {path: 'blogs/create', component: CreateBlogComponent},
+  {path: 'admin', component: LoginComponent}
 ];
 
 @NgModule({

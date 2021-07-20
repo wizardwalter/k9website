@@ -5,11 +5,12 @@ const blogController = require("../Controllers/blogController");
 const fs = require('fs');
 const upload = require("multer");
 const cloud = require("../config/cloudinary_config")
+const checkAuth = require("../middleware/check-auth");
 
 
 
 
-router.post("/create", cloud.single("photo"), blogController.createBlog);
+router.post("/create", checkAuth, cloud.single("photo"), blogController.createBlog);
 
 router.get("", blogController.getBlogs);
 
