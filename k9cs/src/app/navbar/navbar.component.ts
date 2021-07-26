@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminServiceService } from '../shared/admin-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  islogin;
+  constructor(public adminService:AdminServiceService) { }
 
   ngOnInit(): void {
+    this.islogin = this.adminService.getIsAuth();
   }
 
+  logout(){
+    this.adminService.logout();
+    window.location.reload();
+  }
 }

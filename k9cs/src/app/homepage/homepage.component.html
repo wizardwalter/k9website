@@ -1,4 +1,7 @@
 
+  <div *ngIf="isLoading" class="lds-facebook"><div></div><div></div><div></div></div>
+
+<div *ngIf="!isLoading" class="wrapper">
 <div class="container">
   <carousel [interval]="myInterval" [(activeSlide)]="activeSlideIndex" >
     <slide *ngFor="let slide of slides; let index=index">
@@ -31,6 +34,7 @@
         </div>
       </div>
     </div>
+  </div>
 
 
 

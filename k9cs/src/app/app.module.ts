@@ -21,6 +21,9 @@ import {
 import { Cloudinary } from 'cloudinary-core';
 import { LoginComponent } from './login/login.component';
 import { LoginInterceptor } from './login/login-interceptor';
+import { CreateDogComponent } from './create-dog/create-dog.component';
+
+
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { LoginInterceptor } from './login/login-interceptor';
     AboutUsComponent,
     CreateBlogComponent,
     LoginComponent,
+    CreateDogComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ import { LoginInterceptor } from './login/login-interceptor';
     HttpClientModule,
     CloudinaryModule.forRoot({ Cloudinary }, {
       cloud_name: 'walterscloudinary',
-    } as CloudinaryConfiguration),
+    } as CloudinaryConfiguration)
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
@@ -53,3 +57,4 @@ import { LoginInterceptor } from './login/login-interceptor';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

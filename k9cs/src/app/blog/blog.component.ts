@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {BlogServiceService} from '../shared/blog-service.service'
+import { AdminServiceService } from '../shared/admin-service.service';
+import {BlogServiceService} from '../shared/blog-service.service';
 
 @Component({
   selector: 'app-blog',
@@ -10,9 +11,11 @@ export class BlogComponent implements OnInit {
    blogs;
    date;
    imageName;
-  constructor(public blogService: BlogServiceService) { }
+   isLogin
+  constructor(public blogService: BlogServiceService, public adminService: AdminServiceService) { }
 
   ngOnInit(): void {
+    this.isLogin = this.adminService.getIsAuth();
     this.blogService.getBlogs().subscribe(
     res=> {
       this.blogs = res['blogs'];

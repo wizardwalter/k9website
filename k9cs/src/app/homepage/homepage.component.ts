@@ -15,6 +15,7 @@ export class HomepageComponent implements OnInit {
   image;
   text;
   title;
+  isLoading: boolean = true;
 
 
   slides = [
@@ -28,7 +29,8 @@ export class HomepageComponent implements OnInit {
     this.blogService.getBlogs().subscribe(
     res=> {
       this.blogs = res['blogs'];
-      console.log(this.blogs)
+      console.log(this.blogs);
+      this.isLoading = false;
     })
   }
 

@@ -14,6 +14,7 @@ export class DogsComponent implements OnInit {
   latitudes = [];
   longtitudes = [];
   map: mapboxgl.Map;
+  isLoading: boolean;
   style = 'mapbox://styles/mapbox/streets-v11';
   constructor(public dogService: DogServiceService) { }
 
@@ -33,8 +34,8 @@ export class DogsComponent implements OnInit {
      new mapboxgl.Marker()
     .setLngLat([oneDog.coordinates.longtitude, oneDog.coordinates.latitude])
     .addTo(this.map)
-      });
-    });
+      })
+    })
   }
 }
 

@@ -1,21 +1,25 @@
-<div id="container-top" class="container">
-  <div class="container">
-    <div class="row justify-content-around">
-      <div *ngFor="let d of dogs" class="card" style="width: 18rem;">
-        <img src="{{d.image}}" class="card-img-top">
-        <div class="card-body">
-          <p class="card-title">{{d.name}}</p>
-          <p class="card-text">{{d.text}}</p>
-          <button class="btn btn-sm btn-primary" [routerLink]="[d._id]">{{d.name}}</button>
+<div *ngIf="!isLoading" class="wrapper">
+  <div id="container-top" class="container">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div *ngFor="let d of dogs" class="card" style="width: 18rem;">
+          <img src="{{d.image}}" class="card-img-top">
+          <div class="card-body">
+            <p class="card-title">{{d.name}}</p>
+            <p class="card-text">{{d.text}}</p>
+            <button class="btn btn-sm btn-primary" [routerLink]="[d._id]">{{d.name}}</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class="container-fluid" >
-  <div class="row justify-content-center" id="map-container">
-    <div class="map" id="map" class="match-parent"></div>
+  <div class="container-fluid" >
+    <div class="row justify-content-center" id="map-container">
+      <div class="map" id="map" class="match-parent"></div>
+    </div>
   </div>
+  <button class="btn btn-md btn-success" routerLink="/dog/create"> Create Dog</button>
 </div>
+
 
 

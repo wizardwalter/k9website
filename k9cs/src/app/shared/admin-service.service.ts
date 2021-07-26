@@ -11,6 +11,7 @@ export class AdminServiceService {
   constructor(public http: HttpClient, public router: Router) {}
   baseUrl = 'http://localhost:8080';
   isAuthenticated = false;
+  isLoading: boolean;
   private token: string;
   private tokenTimer : number;
   private authStatusListener = new Subject<boolean>();
@@ -27,9 +28,10 @@ export class AdminServiceService {
     return this.isAuthenticated;
   }
 
-  login(email: string, password: string) {
+  async login(email: string, password: string) {
     const authData: Admin = { email: email, password: password };
-    return this.http
+    this.isLoading = true;
+     return await this.http
       .post<{ token: string, expiresIn:number}>(this.baseUrl + '/admin', authData)
       .subscribe(res => {
         console.log("token", res.token)
@@ -43,9 +45,13 @@ export class AdminServiceService {
           this.authStatusListener.next(true);
           const now = new Date();
           const expirationDate = new Date (now.getTime() + expiresInDuration * 1000);
-          this.saveAdminData(token, expirationDate)
-          this.router.navigate(['/']);
+          this.saveAdminData(token, expirationDate);
+          this.router.navigate(['/'])
+          .then(() => {
+            window.location.reload();
+          });
         }
+
       });
   }
   logout(){
@@ -54,7 +60,10 @@ export class AdminServiceService {
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
-    this.router.navigate(['/']);
+    this.router.navigate(['/'])
+    .then(()=>{
+      window.location.reload();
+    })
   };
 
   setAdminTimer(duration:number){
@@ -104,6 +113,8 @@ export class AdminServiceService {
         expirationDate: new Date(expirationDate)
       }
     }
+
+
 
   }
 
