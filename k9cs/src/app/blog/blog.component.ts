@@ -11,7 +11,7 @@ export class BlogComponent implements OnInit {
    blogs;
    date;
    imageName;
-   isLogin
+   isLogin: boolean = false;
   constructor(public blogService: BlogServiceService, public adminService: AdminServiceService) { }
 
   ngOnInit(): void {

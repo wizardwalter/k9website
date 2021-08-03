@@ -1,4 +1,4 @@
-<nav>
+<!-- <nav>
   <div id="very-top" class="container-fluid">
     <div class="row justify-content-end">
 
@@ -21,7 +21,7 @@
 </nav>
 <nav id="bottom-nav" class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><img src="https://res.cloudinary.com/walterscloudinary/image/upload/v1620420488/k9cs/logo_khl5da.jpg">K9CS</a>
+      <a id="logo" class="navbar-brand" href="/" style="left:logoWidth;"><img src="https://res.cloudinary.com/walterscloudinary/image/upload/v1620420488/k9cs/logo_khl5da.jpg"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,4 +42,53 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
+
+<div id="navbar" class="wrapper">
+  <div class="row d-flex justify-content-center">
+    <div class="col col-sm-1">
+      <li class="user">
+        <a class="dropbtn" >
+          <i (click)="UserDropdown()"
+            id="hamburger_icon"
+            class="hamburger_icon fa fa-bars fa-5x"
+            aria-hidden="true"
+          ></i>
+        </a>
+        <ul id="UserContent" class="user-content">
+          <li>
+            <a href="/blogs">News</a>
+          </li>
+          <li>
+            <a href="/dogs">Graduates</a>
+          </li>
+          <li>
+            <a href="/about">About Us</a>
+          </li>
+        </ul>
+      </li>
+    </div>
+    <div
+      id="donate"
+      class="col-sm-2 d-flex align-items-center justify-content-center"
+    >
+      <button id="nav_buttons">Donate</button>
+    </div>
+    <div class="col-sm-4 d-flex align-items-end justify-content-center">
+      <a id="logo" class="navbar-brand" href="/"
+        ><img
+          src="https://res.cloudinary.com/walterscloudinary/image/upload/v1627942087/k9cs/Logo_nixy5y.png"
+      /></a>
+    </div>
+    <div
+      id="contact"
+      class="col-sm-2 d-flex align-items-center justify-content-center"
+    >
+      <button id="nav_buttons">Contact</button>
+    </div>
+    <div class="col col-sm-1">
+      <button *ngIf="islogin" class="btn btn-danger btn-sm">Logout</button>
+    </div>
+  </div>
+  <!-- end of row -->
+</div>

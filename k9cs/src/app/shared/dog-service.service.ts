@@ -22,6 +22,6 @@ export class DogServiceService {
   }
 
   addDog(dogObj): Observable<any> {
-    return this.http.post(this.baseUrl + '/blogs/create', dogObj);
+    return this.http.post(this.baseUrl + '/dogs/create', dogObj);
   }
 }

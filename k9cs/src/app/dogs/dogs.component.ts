@@ -3,6 +3,7 @@ import { DogServiceService } from '../shared/dog-service.service';
 import { Dog } from '../_models/dogModel';
 import { environment } from '../_enviroment/env.js';
 import * as mapboxgl from 'mapbox-gl';
+import { AdminServiceService } from '../shared/admin-service.service';
 
 @Component({
   selector: 'app-dogs',
@@ -14,12 +15,13 @@ export class DogsComponent implements OnInit {
   latitudes = [];
   longtitudes = [];
   map: mapboxgl.Map;
-  isLoading: boolean;
+  isLogin : boolean = false;
   style = 'mapbox://styles/mapbox/streets-v11';
-  constructor(public dogService: DogServiceService) { }
+  constructor(public dogService: DogServiceService, public adminService: AdminServiceService) { }
 
-   ngOnInit() {
-     this.dogService.getDogs().subscribe(res=>{
+  ngOnInit() {
+    this.isLogin = this.adminService.getIsAuth();
+    this.dogService.getDogs().subscribe(res=>{
       this.dogs = res['dogs'];
       this.map = new mapboxgl.Map({
         accessToken: environment.mapbox.accessToken,
@@ -28,7 +30,6 @@ export class DogsComponent implements OnInit {
         zoom: 1,
         center: [-89,37.30027528134433],
     });
-     // Add map controls
      this.map.addControl(new mapboxgl.NavigationControl());
   this.dogs.forEach(oneDog => {
      new mapboxgl.Marker()

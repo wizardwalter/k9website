@@ -8,10 +8,16 @@ import { AdminServiceService } from './shared/admin-service.service';
 })
 export class AppComponent implements OnInit {
   title = 'k9cs';
-
+  windowHeight;
+  windowWidth;
   constructor(public adminService: AdminServiceService) {}
 
   ngOnInit() {
     this.adminService.autoAuthUser();
+    this.fillScreen()
+  }
+  fillScreen(){
+    this.windowHeight = window.screen.height +"px";
+    this.windowWidth = window.screen.width+"px";
   }
 }

@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const dogs = require("../Models/dogs");
 const Dogs = mongoose.model('dogs');
 
+
 module.exports.createDogs = (req,res)=>{
    var dog = new Dogs();
-   dog.image = req.body.image;
+   dog.image = req.file.filename;
    dog.name = req.body.name;
    dog.about = req.body.about;
    dog.date = Date(mongoose.now);

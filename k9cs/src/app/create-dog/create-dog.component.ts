@@ -16,10 +16,10 @@ export class CreateDogComponent implements OnInit {
   ngOnInit(): void {
     var map = new mapboxgl.Map({
       accessToken: environment.mapbox.accessToken,
-      container: 'map', // container id
+      container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-98, 35], // starting position
-      zoom: 2, // starting zoom
+      center: [-98, 35],
+      zoom: 2,
     });
 
     map.on('mousemove', function (e) {
@@ -49,18 +49,21 @@ export class CreateDogComponent implements OnInit {
   }
   onSubmit(formObj: NgForm) {
     let Data = {
-      title: formObj.value.title,
-      text: formObj.value.text,
-      author: formObj.value.author,
+      name: formObj.value.name,
+      about: formObj.value.about,
+      latitude: formObj.value.latitude,
+      longtitude: formObj.value.longtitude,
+
     };
     let formData = new FormData();
-    let userObj = formObj.value;
+    let dogObj = formObj.value;
 
     formData.append('photo', this.file);
-    formData.append('title', Data.title);
-    formData.append('text', Data.text);
-    formData.append('author', Data.author);
-    formData.append('userObj', JSON.stringify(userObj));
+    formData.append('name', Data.name);
+    formData.append('about', Data.about);
+    formData.append('latitude', Data.latitude);
+    formData.append('longtitude', Data.longtitude);
+    formData.append('dogObj', JSON.stringify(dogObj));
     console.log(formData);
     this.dogService.addDog(formData).subscribe();
     this.router.navigateByUrl('/dogs');

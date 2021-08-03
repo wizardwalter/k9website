@@ -4,6 +4,7 @@ import { DogServiceService } from '../shared/dog-service.service';
 import { environment } from '../_enviroment/env.js';
 import * as mapboxgl from 'mapbox-gl';
 import { Dog } from '../_models/dogModel';
+import { AdminServiceService } from '../shared/admin-service.service';
 
 @Component({
   selector: 'app-dogs-by-id',
@@ -16,11 +17,13 @@ export class DogsByIdComponent implements OnInit {
   lat: number;
   lng: number;
   map: mapboxgl.Map;
+  isLogin: boolean = false;
   style = 'mapbox://styles/mapbox/streets-v11';
 
-  constructor(public activatedRoute: ActivatedRoute, public dogService: DogServiceService) { }
-
+  constructor(public activatedRoute: ActivatedRoute, public dogService: DogServiceService, public adminService: AdminServiceService) { }
+// have to figure out why the map does not appear on init?
   ngOnInit(): void {
+
     this.activatedRoute.paramMap.subscribe(params =>{
       this.id = params.get('id');
       this.dogService.getDog(this.id).subscribe(res => {
@@ -43,7 +46,7 @@ export class DogsByIdComponent implements OnInit {
           console.log(this.dog);
       })
     })
-
+    this.isLogin = this.adminService.getIsAuth();
   }
 
 }
