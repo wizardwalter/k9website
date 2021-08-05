@@ -21,12 +21,13 @@ img {
   margin-top: 30px;
   z-index: 2;
 }
-#contact_button{
-  text-shadow: 1px 1px #5488D7, -1px -1px 0 #5488D7, 1px -1px 0 #5488D7, -1px 1px 0 #5488D7;
+#contact_button {
+  text-shadow: 1px 1px #5488d7, -1px -1px 0 #5488d7, 1px -1px 0 #5488d7,
+    -1px 1px 0 #5488d7;
 }
 
 .nav_buttons {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -39,13 +40,39 @@ img {
   cursor: pointer;
   overflow: hidden;
   outline: none;
+}
+
+.inner_buttons {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 21px;
+  line-height: 26px;
+  color: #ffffff;
+  border: 2.7px solid;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #373737 0%, #181818 97.18%);
+  box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.32);
+  border-radius: 100px;
+}
+
+#graduates_button {
+width: 183.96px;
+height: 51px;
+z-index: 3
+}
+
+span {
+margin-top: 505px;
 
 }
 
-#donate_button{
-    text-shadow: 1px 1px #D75454, -1px -1px 0 #D75454, 1px -1px 0 #D75454, -1px 1px 0 #D75454;
+#donate_button {
+  text-shadow: 1px 1px #d75454, -1px -1px 0 #d75454, 1px -1px 0 #d75454,
+    -1px 1px 0 #d75454;
+  margin-top: 13px;
+  margin-left: 22px;
 }
-
 
 #donate {
   width: 300px;
