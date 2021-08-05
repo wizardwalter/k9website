@@ -48,13 +48,13 @@
   <div class="row d-flex justify-content-center">
     <div class="col col-sm-1">
       <li class="user">
-        <a class="dropbtn" >
+        <!-- <a class="dropbtn" >
           <i (click)="UserDropdown()"
             id="hamburger_icon"
             class="hamburger_icon fa fa-bars fa-5x"
             aria-hidden="true"
           ></i>
-        </a>
+        </a> -->
         <ul id="UserContent" class="user-content">
           <li>
             <a href="/blogs">News</a>
@@ -72,7 +72,7 @@
       id="donate"
       class="col-sm-2 d-flex align-items-center justify-content-center"
     >
-      <button id="nav_buttons">Donate</button>
+      <button id="donate_button" class="nav_buttons"><span>DONATE</span></button>
     </div>
     <div class="col-sm-4 d-flex align-items-end justify-content-center">
       <a id="logo" class="navbar-brand" href="/"
@@ -84,7 +84,7 @@
       id="contact"
       class="col-sm-2 d-flex align-items-center justify-content-center"
     >
-      <button id="nav_buttons">Contact</button>
+      <button id="contact_button" class="nav_buttons">CONTACT</button>
     </div>
     <div class="col col-sm-1">
       <button *ngIf="islogin" class="btn btn-danger btn-sm">Logout</button>

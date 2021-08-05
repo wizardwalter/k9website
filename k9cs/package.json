@@ -26,6 +26,7 @@
     "bootstrap": "^4.6.0",
     "cloudinary-core": "^2.11.4",
     "font-awesome": "^4.7.0",
+    "google-fonts": "^1.0.0",
     "mapbox-gl": "^2.2.0",
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",

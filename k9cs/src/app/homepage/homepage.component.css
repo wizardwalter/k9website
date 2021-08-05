@@ -4,9 +4,9 @@ h2{
 
 
 carousel img{
-    margin-top: 6vh;
     height: 80vh;
     width: 90ch;
+    z-index: 1;
 }
 
 a{
