@@ -19,11 +19,15 @@ img {
     inset 0px 4px 14px 9px rgba(0, 0, 0, 0.25);
   border-radius: 60px;
   margin-top: 30px;
+  margin-left: 40px;
   z-index: 2;
 }
 #contact_button {
   text-shadow: 1px 1px #5488d7, -1px -1px 0 #5488d7, 1px -1px 0 #5488d7,
     -1px 1px 0 #5488d7;
+  margin-top: 15px;
+  text-align: center;
+  left: 70;
 }
 
 .nav_buttons {
@@ -54,17 +58,55 @@ img {
   background: linear-gradient(180deg, #373737 0%, #181818 97.18%);
   box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.32);
   border-radius: 100px;
+  top: 35px;
+  position: absolute;
 }
 
 #graduates_button {
-width: 183.96px;
-height: 51px;
-z-index: 3
+  width: 183.96px;
+  height: 51px;
+  z-index: 3;
+  position: absolute;
+  margin-top: 100px;
+  left: 185px;
 }
 
-span {
-margin-top: 505px;
+a{
+  color: #ffffff;
+  text-decoration: none;
+}
 
+#logout {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(242, 242, 242, 0.75) 100%
+  );
+  border: 2.5 px solid #969696;
+  border-radius: 30px;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #373737;
+  position: absolute;
+  width: 107px;
+  height: 32px;
+  left: 5px;
+  top: 20px;
+}
+
+#news_button {
+  width: 183.96px;
+  height: 51px;
+  position: absolute;
+  z-index: 3;
+  margin-top: 100px;
+  left: -70px;
 }
 
 #donate_button {

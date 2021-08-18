@@ -37,7 +37,7 @@
             <a class="nav-link" href="/dogs">Graduates</a>
           </li>
         </ul>
-        <div *ngIf="islogin" id="logout" (click)="logout()" class="container-fluid d-flex justify-content-end">
+        <div *ngIf="islogin" id="logout"  class="container-fluid d-flex justify-content-end">
           <button  class="btn btn-md btn-danger">Logout</button>
         </div>
       </div>
@@ -68,18 +68,15 @@
         </ul>
       </li>
     </div>
-    <div
-      id="donate"
-      class="col-sm-2 align-items-around"
-    >
-    <div class="row">
+    <div id="donate" class="col-sm-2 align-items-around">
+      <div class="row">
         <div class="col-sm-7 align-items-center justify-content-center">
-          <button id="donate_button" class="nav_buttons"><span>DONATE</span></button>
+          <button href="/donate" id="donate_button" class="nav_buttons">
+            <a href="/donate">DONATE</a>
+          </button>
         </div>
-        <div class="col-sm-4 offset-sm-6 align-items-end justify-content-end" >
-          <button id="graduates_button" class="inner_buttons">GRADUATES</button>
-        </div>
-    </div>
+        <button id="graduates_button" class="inner_buttons"><a href="/dogs">GRADUATES</a></button>
+      </div>
     </div>
     <div class="col-sm-4 d-flex align-items-end justify-content-center">
       <a id="logo" class="navbar-brand" href="/"
@@ -87,14 +84,14 @@
           src="https://res.cloudinary.com/walterscloudinary/image/upload/v1627942087/k9cs/Logo_nixy5y.png"
       /></a>
     </div>
-    <div
-      id="contact"
-      class="col-sm-2 d-flex align-items-around justify-content-center"
-    >
-      <button id="contact_button" class="nav_buttons">CONTACT</button>
+    <div id="contact" class="col-sm-2 align-items-around">
+      <div class="row">
+        <button id="contact_button" class="nav_buttons"><a href="/contact">CONTACT</a></button>
+        <button id="news_button" class="inner_buttons"><a href="/blogs">NEWS</a></button>
+      </div>
     </div>
     <div class="col col-sm-1">
-      <button *ngIf="islogin" class="btn btn-danger btn-sm">Logout</button>
+      <button *ngIf="islogin" (click)="logout()" id="logout" class="btn btn-sm">Logout</button>
     </div>
   </div>
   <!-- end of row -->

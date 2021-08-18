@@ -1,28 +1,52 @@
 <div class="wrapper">
-  <div id="container-top" class="container">
-    <div class="container">
-      <div class="row justify-content-around">
-        <div *ngFor="let d of dogs" class="card" style="width: 18rem;">
-          <cl-image public-id="{{d.image}}">
-            <cl-transformation height="281px" width="750px"></cl-transformation>
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-around">
+      <div class="col-sm-6">
+        <div>
+          <div class="map" id="map" class="match-parent"></div>
+        </div>
+      </div>
 
-        </cl-image>
-          <div class="card-body">
-            <p class="card-title">{{d.name}}</p>
-            <p class="card-text">{{d.text}}</p>
-            <button class="btn btn-sm btn-primary" [routerLink]="[d._id]">{{d.name}}</button>
+      <div class="col-sm-4">
+        <div id="caption">
+          <div
+            id="donation_header_row"
+            class="row d-flex justify-content-center"
+          >
+            <span id="donation_header">Our Donations</span>
+          </div>
+
+          <div id="donation_paragraph_row" class="row d-flex justify-content-center">
+            <span id="donation_text" class="col-sm-11">
+              View to see where all of our donated graduates relocated!
+            </span>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid" >
-    <div class="row justify-content-center" id="map-container">
-      <div class="map" id="map" class="match-parent"></div>
+
+  <div id="container-top" class="container-fluid">
+      <div class="row d-flex justify-content-center">
+        <div *ngFor="let d of dogs" class="card col-sm-2">
+          <div class=" row d-flex justify-content-center">
+            <cl-image class="card-top" public-id="{{ d.image }}">
+              <cl-transformation gravity="face" height="250" width="275" crop="fill" radius="25" border="4px_solid_rgb:282828">
+              </cl-transformation>
+            </cl-image>
+          </div>
+          <div class="not-card-body row d-flex justify-content-center">
+              <button class="card-button" [routerLink]="[d._id]">
+                <span class="card-span">{{ d.name }}</span>
+              </button>
+          </div>
+      </div>
     </div>
-  </div>
-  <button *ngIf="isLogin" class="btn btn-md btn-success" routerLink="/dog/create"> Create Dog</button>
+  <button
+    *ngIf="isLogin"
+    class="btn btn-md btn-success"
+    routerLink="/dog/create"
+  >
+    Create Dog
+  </button>
 </div>
-
-
-
