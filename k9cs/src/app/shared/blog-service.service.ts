@@ -41,5 +41,13 @@ export class BlogServiceService {
 
   addBlog(userObj): Observable<any> {
     return this.http.post(this.baseUrl + '/blogs/create', userObj);
-  }
+  };
+
+  editBlog(id, userObj): Observable<any>{
+    return this.http.put(this.baseUrl + '/blogs/' + id, userObj)
+  };
+
+  deleteBlog(id){
+    return this.http.delete(this.baseUrl + '/blogs/' + id);
+  };
 }

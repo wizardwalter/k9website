@@ -12,6 +12,9 @@ router.get('', dogsController.getDogs);
 
 router.get('/:id', dogsController.getDog);
 
+router.delete('/:id', checkAuth, dogsController.deleteDog);
+
+router.put('/:id', checkAuth, cloud.single("photo"), dogsController.editDog);
 
 module.exports = router;
 

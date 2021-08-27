@@ -42,3 +42,38 @@ module.exports.getDog = (req,res)=>{
             }
         })
 };
+
+module.exports.deleteDog = (req,res) =>{
+    Dogs.findByIdAndDelete(req.params.id)
+    .exec((err,dog)=>{
+        if(err){
+            console.log(err);
+            res.status(400).json({message: 'dog could not be deleted, please try again'});
+        } else {
+            res.status(200).json({message: dog + 'deleted'})
+        }
+    })
+}
+
+module.exports.editDog = (req,res) =>{
+    console.log("request", req.body)
+    Dogs.findByIdAndUpdate(req.params.id,{$set:{
+         _id: req.params.id,
+         image : req.file.filename,
+        name : req.body.name,
+        about : req.body.about,
+        date :  Date(mongoose.now),
+        coordinates:{
+            latitude: req.body.latitude,
+            longtitude: req.body.longtitude
+        }
+        
+    }},{new:true})
+    .then(result => {
+        console.log(result);
+        res.status(200).json({
+            message: 'update was a success!',
+            updatedBlog: result
+    });
+    })
+}

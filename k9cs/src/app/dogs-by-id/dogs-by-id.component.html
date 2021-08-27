@@ -10,8 +10,8 @@
         <h5 class="card-title">{{dog.name}}</h5>
         <p class="card-text">{{dog.about}}</p>
       </div>
-      <button *ngIf="isLogin" class="btn btn-lg btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-      <button *ngIf="isLogin" class="btn btn-lg btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+      <button *ngIf="isLogin" class="btn btn-lg btn-warning" [routerLink]="['/dog/edit/', dog._id]"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+      <button *ngIf="isLogin" class="btn btn-lg btn-danger"><i class="fa fa-trash" aria-hidden="true" (click)='deleteDog(dog._id)'></i></button>
     </div>
     <div class="map" id="map" class="match-parent"></div>
   </div>

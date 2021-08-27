@@ -1,0 +1,15 @@
+
+#theform{
+  height: 75vh;
+  width: 35rem;
+  background-color: blue;
+  margin: 20px;
+}
+
+#header{
+  margin: 15px 0 15px 0;
+}
+
+#input-fields{
+  margin-bottom: 100px;
+}

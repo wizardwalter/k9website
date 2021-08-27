@@ -44,10 +44,13 @@ module.exports.getBlog = (req,res) => {
 
 module.exports.editBlog = (req,res) =>{
     // Once photo upload complete make conditional to check if image = null or not
+    console.log("request", req.body)
     Blog.findByIdAndUpdate(req.params.id,{$set:{
          _id: req.params.id,
-        title: req.body.title,
-        text: req.body.text
+         image : req.file.filename,
+        title : req.body.title,
+        text : req.body.text,
+        author : req.body.author
     }},{new:true})
     .then(result => {
         console.log(result);

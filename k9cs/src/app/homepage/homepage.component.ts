@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
 
   slides = [
-    {image: 'https://res.cloudinary.com/walterscloudinary/image/upload/v1620428471/k9cs/blue_border_patrol_fjjqcy.jpg', text: "Why we Raise, Train, and Donate K9s", header:"About Us", link:"http://localhost:4200/about"},
+    {image: 'https://res.cloudinary.com/walterscloudinary/image/upload/v1627436982/k9cs/photo-1627436981748.jpg', text: "Why we Raise, Train, and Donate K9s", header:"About Us", link:"http://localhost:4200/about"},
     {image: 'assets/PoliceDog850.jpg', text: "lorem ipsum blah blah blah", header: ""},
     {image: 'assets/k9-police-car.jpg', text: "lorem ipsum blah blah blah", header:""},
   ];

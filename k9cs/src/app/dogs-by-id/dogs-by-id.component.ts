@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { DogServiceService } from '../shared/dog-service.service';
 import { environment } from '../_enviroment/env.js';
 import * as mapboxgl from 'mapbox-gl';
@@ -20,10 +20,9 @@ export class DogsByIdComponent implements OnInit {
   isLogin: boolean = false;
   style = 'mapbox://styles/mapbox/streets-v11';
 
-  constructor(public activatedRoute: ActivatedRoute, public dogService: DogServiceService, public adminService: AdminServiceService) { }
+  constructor(public activatedRoute: ActivatedRoute, public dogService: DogServiceService, public adminService: AdminServiceService, public router: Router) { }
 // have to figure out why the map does not appear on init?
   ngOnInit(): void {
-
     this.activatedRoute.paramMap.subscribe(params =>{
       this.id = params.get('id');
       this.dogService.getDog(this.id).subscribe(res => {
@@ -48,5 +47,13 @@ export class DogsByIdComponent implements OnInit {
     })
     this.isLogin = this.adminService.getIsAuth();
   }
+
+  deleteDog(id){
+    this.dogService.deleteDog(id).subscribe(res =>{
+      alert('Dog was successfully deleted');
+    })
+    this.router.navigateByUrl("/dogs");
+  }
+
 
 }

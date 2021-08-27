@@ -22,6 +22,7 @@ import { Cloudinary } from 'cloudinary-core';
 import { LoginComponent } from './login/login.component';
 import { LoginInterceptor } from './login/login-interceptor';
 import { CreateDogComponent } from './create-dog/create-dog.component';
+import { EditDogComponent } from './edit-dog/edit-dog.component';
 
 
 
@@ -38,6 +39,7 @@ import { CreateDogComponent } from './create-dog/create-dog.component';
     CreateBlogComponent,
     LoginComponent,
     CreateDogComponent,
+    EditDogComponent,
   ],
   imports: [
     BrowserModule,

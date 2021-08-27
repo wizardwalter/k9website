@@ -16,9 +16,9 @@ router.get("", blogController.getBlogs);
 
 router.get("/:id", blogController.getBlog);
 
-router.put("/:id", blogController.editBlog);
+router.put("/:id",checkAuth, cloud.single("photo"), blogController.editBlog);
 
-router.delete("/:id", blogController.deleteBlog);
+router.delete("/:id",checkAuth, blogController.deleteBlog);
 
 
 module.exports = router;

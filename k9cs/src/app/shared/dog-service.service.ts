@@ -19,9 +19,16 @@ export class DogServiceService {
   getDog(id){
     console.log(id)
     return this.http.get(this.baseUrl + "/dogs/"+ id)
-  }
+  };
 
   addDog(dogObj): Observable<any> {
     return this.http.post(this.baseUrl + '/dogs/create', dogObj);
-  }
+  };
+
+  deleteDog(id){
+    return this.http.delete(this.baseUrl + '/dogs/' + id)
+  };
+  editDog(id, dogObj) : Observable<any>{
+    return this.http.put(this.baseUrl + '/dogs/' + id, dogObj)
+  };
 }

@@ -56,9 +56,9 @@ export class CreateBlogComponent implements OnInit {
     formData.append("author", Data.author);
     formData.append("userObj", JSON.stringify(userObj));
     console.log(formData)
+    console.log(this.file)
     this.blogService.addBlog(formData).subscribe();
     this.router.navigateByUrl("/blogs");
-
   }
   //   onSubmit(form: NgForm){
   //     if (form.invalid) {
