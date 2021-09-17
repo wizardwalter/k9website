@@ -48,7 +48,7 @@ module.exports.createAdmin = (req, res, next) =>{
               const token = jwt.sign(
                 { email: fetchedAdmin.email, adminId: fetchedAdmin._id },
                 enviromentVariable["jwt-secret"],
-                { expiresIn: "1h" }
+                { expiresIn: "1d" }
               );
               res.status(200).json({
                 token: token,

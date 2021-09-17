@@ -10,6 +10,7 @@ export class HomepageComponent implements OnInit {
 
   myInterval = 2750;
   activeSlideIndex = 0;
+  blogs1;
   blogs;
   date;
   image;
@@ -28,17 +29,9 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.blogService.getBlogs().subscribe(
     res=> {
-      this.blogs = res['blogs'];
-      console.log(this.blogs);
+      this.blogs1 = res['blogs'];
+      this.blogs = this.blogs1.slice(this.blogs1.length - 3, this.blogs1.length);
       this.isLoading = false;
     })
   }
-
-  // getBlog(id){
-  //   this.blogService.getBlog(id).subscribe(res => {
-  //     this.blogs = res['blogs/' + id]
-  //     console.log(this.blogs);
-  //   })
-  // }
-
 }

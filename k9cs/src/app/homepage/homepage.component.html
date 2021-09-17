@@ -5,7 +5,7 @@
 </div>
 
 <div *ngIf="!isLoading" class="wrapper">
-  <div class="container">
+  <div class="container" id="slideshow">
     <carousel [interval]="myInterval" [(activeSlide)]="activeSlideIndex">
       <slide *ngFor="let slide of slides; let index = index">
         <img
@@ -22,38 +22,40 @@
         </div>
       </slide>
     </carousel>
-  </div>
 
-  <div class="row d-flex justify-content-center">
-    <div id="aboutus" class="row d-flex just">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-5 d-flex align-items-around">
-        <div class="row d-flex justify-content-center">
-          <h2 id="aboutusheader">About Us</h2>
-          <img
-            id="aboutusimg"
-            src="https://res.cloudinary.com/walterscloudinary/image/upload/v1630107404/k9cs/01_horizontal-Recovered_de6tn8.jpg"
-          />
+
+  <div id="aboutus" class="container">
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5 d-flex align-items-around">
+          <div class="row d-flex justify-content-center">
+            <h2 id="aboutusheader">About Us</h2>
+            <img
+              id="aboutusimg"
+              src="https://res.cloudinary.com/walterscloudinary/image/upload/v1630107404/k9cs/01_horizontal-Recovered_de6tn8.jpg"
+            />
+          </div>
         </div>
-      </div>
-      <div class="col-sm-5 d-flex align-items-center">
-        <p id="aboutustext">
-          For over 30 years, Bryan Colletti has donated to communities around
-          the United States. It takes a special dog to be a working police, or
-          search & rescue K-9. Usually Belgian Malinois, German Shepherds, or a
-          mix of the two, future officers live in-house with Bryan and his
-          family for daily training. Dogs are raised and trained one, two or
-          three at at time, learning the skills they need to work patrol,
-          detection and developing their overall stability of character. To
-          fully train a dog to the point that he/she is ready for donation can
-          take as much as a year and cost thousands of dollars. The receiving
-          police department, SAR organization, or Military Veteran that receives
-          the dog will be saving thousands of dollars and given a dog that is
-          ready to do his/her job.
-        </p>
-      </div>
+        <div class="col-sm-5 d-flex align-items-center">
+          <p id="aboutustext">
+            For over 30 years, Bryan Colletti has donated to communities around
+            the United States. It takes a special dog to be a working police, or
+            search & rescue K-9. Usually Belgian Malinois, German Shepherds, or a
+            mix of the two, future officers live in-house with Bryan and his
+            family for daily training. Dogs are raised and trained one, two or
+            three at at time, learning the skills they need to work patrol,
+            detection and developing their overall stability of character. To
+            fully train a dog to the point that he/she is ready for donation can
+            take as much as a year and cost thousands of dollars. The receiving
+            police department, SAR organization, or Military Veteran that receives
+            the dog will be saving thousands of dollars and given a dog that is
+            ready to do his/her job.
+          </p>
+        </div>
     </div>
   </div>
+</div>
   <div id="ourteam" class="container">
     <div class="row d-flex justify-content-center">
       <h2 id="ourteamheader">Our Team</h2>
@@ -92,27 +94,31 @@
         </div>
       </div>
 
-      <!-- <div id="container-2" class="container">
-        <div *ngFor="let b of blogs">
-          <div class="row d-flex justify-content-center">
-            <div class="card mb-3">
+      <div class="container" id="blogs">
+        <div class="row d-flex" id="view-all-top">
+          <div class="col-4">
+            <button id="view-all"><a href="/blogs"><span id="view-all-text">View All</span></a></button>
+          </div>
+          <div class="col-8">
+            <span id="latest-news">Latest News</span>
+          </div>
+        </div>
+        <div>
+          <!-- make full width of page -->
+          <div id="view-all-row" class="row d-flex justify-content-center" >
+            <div class="card"  *ngFor="let b of blogs">
               <cl-image public-id="{{ b.image }}">
                 <cl-transformation
-                  height="281px"
-                  width="750px"
+                gravity="face" height="200" width="225" crop="fill" border="4px_solid_rgb:282828"
                 ></cl-transformation>
               </cl-image>
               <div class="card-body">
                 <h5 class="card-title">{{ b.title }}</h5>
-                <p class="card-text">{{ b.text }}</p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 </div>

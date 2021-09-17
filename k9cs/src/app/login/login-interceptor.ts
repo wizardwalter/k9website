@@ -9,11 +9,9 @@ export class LoginInterceptor implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler){
     const authToken = this.adminService.getToken();
-    console.log("auth token",authToken)
     const authRequest = req.clone({
       headers: req.headers.set("Authorization", "Bearer " + authToken)
     });
-    console.log("auth request",authRequest)
     return next.handle(authRequest);
   }
 }

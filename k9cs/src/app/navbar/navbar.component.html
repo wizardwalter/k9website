@@ -1,60 +1,14 @@
-<!-- <nav>
-  <div id="very-top" class="container-fluid">
-    <div class="row justify-content-end">
-
-      <div class="col-sm-6">
-        <div class="row justify-content-end">
-          <div class="col-sm-2">
-            <div class="d-flex align-items-center">
-              <button class="btn btn-primary btn-sm" href="">Donate</button>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <div class="d-flex align-items-center">
-              <button class="btn btn-primary btn-sm" href="">Contact Us</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-<nav id="bottom-nav" class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container-fluid">
-      <a id="logo" class="navbar-brand" href="/" style="left:logoWidth;"><img src="https://res.cloudinary.com/walterscloudinary/image/upload/v1620420488/k9cs/logo_khl5da.jpg"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blogs">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dogs">Graduates</a>
-          </li>
-        </ul>
-        <div *ngIf="islogin" id="logout"  class="container-fluid d-flex justify-content-end">
-          <button  class="btn btn-md btn-danger">Logout</button>
-        </div>
-      </div>
-    </div>
-  </nav> -->
-
 <div id="navbar" class="wrapper">
-  <div class="row d-flex justify-content-center">
-    <div class="col col-sm-1">
+  <div id="navbar-row" class="row d-flex justify-content-center">
+    <div class="col col-sm-10 d-xl-none justify-content-start">
       <li class="user">
-        <!-- <a class="dropbtn" >
+        <a class="dropbtn" >
           <i (click)="UserDropdown()"
             id="hamburger_icon"
             class="hamburger_icon fa fa-bars fa-5x"
             aria-hidden="true"
           ></i>
-        </a> -->
+        </a>
         <ul id="UserContent" class="user-content">
           <li>
             <a href="/blogs">News</a>
@@ -62,13 +16,10 @@
           <li>
             <a href="/dogs">Graduates</a>
           </li>
-          <li>
-            <a href="/about">About Us</a>
-          </li>
         </ul>
       </li>
     </div>
-    <div id="donate" class="col-sm-2 align-items-around">
+    <div id="donate" class="col-sm-2 align-items-around d-none d-xl-block">
       <div class="row">
         <div class="col-sm-7 align-items-center justify-content-center">
           <button href="/donate" id="donate_button" class="nav_buttons">
@@ -78,13 +29,13 @@
         <button id="graduates_button" class="inner_buttons"><a href="/dogs">GRADUATES</a></button>
       </div>
     </div>
-    <div class="col-sm-4 d-flex align-items-end justify-content-center">
+    <div class="col-xl-4 col-sm-6 d-flex align-items-end justify-content-center">
       <a id="logo" class="navbar-brand" href="/"
         ><img
           src="https://res.cloudinary.com/walterscloudinary/image/upload/v1627942087/k9cs/Logo_nixy5y.png"
       /></a>
     </div>
-    <div id="contact" class="col-sm-2 align-items-around">
+    <div id="contact" class="col-sm-2 align-items-around d-none d-xl-block">
       <div class="row">
         <button id="contact_button" class="nav_buttons"><a href="/contact">CONTACT</a></button>
         <button id="news_button" class="inner_buttons"><a href="/blogs">NEWS</a></button>
@@ -94,5 +45,4 @@
       <button *ngIf="islogin" (click)="logout()" id="logout" class="btn btn-sm">Logout</button>
     </div>
   </div>
-  <!-- end of row -->
 </div>

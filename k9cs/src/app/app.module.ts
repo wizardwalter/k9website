@@ -23,6 +23,8 @@ import { LoginComponent } from './login/login.component';
 import { LoginInterceptor } from './login/login-interceptor';
 import { CreateDogComponent } from './create-dog/create-dog.component';
 import { EditDogComponent } from './edit-dog/edit-dog.component';
+import { FooterComponent } from './footer/footer.component';
+import { DonateComponent } from './donate/donate.component';
 
 
 
@@ -40,6 +42,8 @@ import { EditDogComponent } from './edit-dog/edit-dog.component';
     LoginComponent,
     CreateDogComponent,
     EditDogComponent,
+    FooterComponent,
+    DonateComponent,
   ],
   imports: [
     BrowserModule,

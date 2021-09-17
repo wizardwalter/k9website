@@ -34,10 +34,8 @@ export class AdminServiceService {
      return await this.http
       .post<{ token: string, expiresIn:number}>(this.baseUrl + '/admin', authData)
       .subscribe(res => {
-        console.log("token", res.token)
         const token = res.token;
         this.token = token;
-        console.log("this token",this.token)
         if(token){
           const expiresInDuration = res.expiresIn;
           this.setAdminTimer(expiresInDuration);

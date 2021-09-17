@@ -5,6 +5,7 @@
   margin: 20px;
   width: 40rem;
   height: 70vh;
+  justify-content: center;
 
 }
 .card-img-top{
@@ -16,4 +17,12 @@ width: 40rem;
   width: 40rem;
   height: 40vh;
   margin: 25px;
+}
+.card-body{
+  height: 300px;
+}
+
+.card-title{
+  text-align: center;
+  font-size: 24px;
 }

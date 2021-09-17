@@ -1,0 +1,26 @@
+.wrapper{
+  margin-top: 150px;
+  height: 189px;
+  background: linear-gradient(180deg, #222222 0%, #363636 100%);
+box-shadow: 0px 4px 60px 6px rgba(0, 0, 0, 0.25);
+
+}
+#row{
+ padding: 10px;
+}
+
+.icon{
+color: #ffffff;
+font-size: 60px;
+margin-left: 60px;
+}
+.span{
+  width: 170px;
+height: 26px;
+font-family: Montserrat;
+font-style: italic;
+font-weight: 900;
+font-size: 21px;
+line-height: 26px;
+color: #FFFFFF;
+}

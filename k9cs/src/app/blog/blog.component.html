@@ -1,18 +1,28 @@
 <div class="container-fluid">
   <div class="container">
-    <div class="row justify-content-around">
-      <div *ngFor="let b of blogs" class="card" style="width: 18rem;">
+    <div class="row d-flex justify-content-around">
+      <div *ngFor="let b of blogs" class="card" >
         <!-- <img src="{{b.image}}" class="card-img-top"> -->
         <cl-image public-id="{{b.image}}">
-          <cl-transformation height="281px" width="750px"></cl-transformation>
-
+          <cl-transformation gravity="face" height="235" width="300" crop="fill"></cl-transformation>
       </cl-image>
         <div class="card-body">
-          <p class="card-title">{{b.title}}</p>
-          <p class="card-text">{{b.text}}</p>
-          <p>posted by: {{b.author}}, {{b.date}}</p>
-          <button *ngIf="isLogin" class="btn btn-lg btn-warning" [routerLink]="['/blogs/edit/', b._id]"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-          <button *ngIf="isLogin" class="btn btn-lg btn-danger" (click)="deletePost(b._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+          <div class="row justify-content-center">
+            <p class="card-title">{{b.title}}</p>
+          </div>
+          <div class="row justify-content-center">
+            <p class="card-text">{{b.text}}</p>
+          </div>
+          <div class="row justify-content-center">
+            <p>posted by: {{b.author}}, {{b.date}}</p>
+          </div>
+          <div id="buttons" class="row justify-content-center">
+            <div class="d-flex align-items-end">
+              <button *ngIf="isLogin" class="btn btn-lg btn-warning" [routerLink]="['/blogs/edit/', b._id]"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+              <button *ngIf="isLogin" class="btn btn-lg btn-danger" (click)="deletePost(b._id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>

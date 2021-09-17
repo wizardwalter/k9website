@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.adminService.autoAuthUser();
-    this.fillScreen()
+  
   }
   fillScreen(){
     this.windowHeight = window.screen.height +"px";

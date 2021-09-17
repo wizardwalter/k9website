@@ -1,0 +1,123 @@
+#aboutus {
+  width: 930px;
+  height: 569.26px;
+  background: linear-gradient(180deg, #3b7ab5 0%, rgba(46, 85, 161, 0.4) 100%);
+  box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25),
+    inset 0px 4px 6px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 51px;
+  margin: 60px 0px 30px 0px;
+}
+#aboutusheader {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 88px;
+  text-align: right;
+  color: #ffffff;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+#aboutusimg {
+  width: 381.96px;
+  height: 326.61px;
+  border-radius: 51px;
+}
+
+#aboutustext {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: right;
+  color: #ffffff;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+#paypal{
+  width: 930px;
+height: 193px;
+background: linear-gradient(157.12deg, #992B2B 14.84%, #671818 86.24%);
+border: 6px solid #501919;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 14px 9px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+margin-bottom: 25px;
+}
+#paypal-span{
+width: 359px;
+height: 105px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 800;
+font-size: 40px;
+line-height: 59px;
+color: #FFFFFF;
+margin-left: 30px;
+margin-bottom: 10px;
+}
+.buttons{
+width: 394px;
+height: 105px;
+background: linear-gradient(180deg, #373737 0%, #181818 97.18%);
+box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.32);
+border-radius: 100px;
+}
+#donate-button{
+width: 303px;
+height: 54px;
+font-family: Montserrat;
+font-style: italic;
+font-weight: 900;
+font-size: 48px;
+line-height: 59px;
+text-align: center;
+color: #FFFFFF;
+}
+#amazon{
+  width: 930px;
+height: 315px;
+background: linear-gradient(157.12deg, #992B2B 14.84%, #671818 86.24%);
+border: 6px solid #501919;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 14px 9px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+}
+#amazon-para{
+  margin-top: 20px;
+  margin-bottom: none;
+width: 837px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+color: #FFFFFF;
+}
+#amazon-para2{
+margin-top: 12px;
+width: 837px;
+height: 107px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 20px;
+text-align: center;
+color: #FFFFFF;
+margin-bottom: 10px;
+}
+#amazon-span{
+  margin-top: 45px;
+  margin-left: 30px;
+  width: 359px;
+  height: 105px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 59px;
+  color: #FFFFFF;
+}

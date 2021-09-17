@@ -1,3 +1,11 @@
+.wrapper {
+  height: 2800px;
+}
+
+#slideshow{
+  width: 1100px;
+}
+
 h2 {
   text-align: center;
 }
@@ -81,7 +89,7 @@ i {
   box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25),
     inset 0px 4px 6px 8px rgba(0, 0, 0, 0.25);
   border-radius: 51px;
-  margin: 30px 0px 30px 0px;
+  margin: 30px 0px 30px 60px;
 }
 #aboutusheader {
   font-family: Montserrat;
@@ -110,6 +118,7 @@ i {
   text-align: right;
   color: #ffffff;
   margin-left: 20px;
+  margin-top: 30px;
 }
 
 #ourteam {
@@ -120,7 +129,6 @@ i {
     inset 0px 4px 6px 8px rgba(0, 0, 0, 0.25);
   border-radius: 51px;
   margin-bottom: 30px;
-
 }
 
 #ourteamheader {
@@ -135,7 +143,7 @@ i {
   margin-top: 20px;
 }
 
-.ourteampics{
+.ourteampics {
   margin-top: 10px;
   width: 156px;
   height: 156px;
@@ -143,26 +151,79 @@ i {
   border: 2px solid black;
 }
 
-.ourteamnames{
- font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 22px;
-line-height: 39px;
-text-align: right;
-color: #FFFFFF;
+.ourteamnames {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 39px;
+  text-align: right;
+  color: #ffffff;
 }
 
-
-.card-img-top{
+.card-img-top {
   height: 160px;
 }
 
-.card{
+.card {
   background: inherit;
   border: none;
 }
 
-.ourteamsubheader{
-  color: #FFFFFF;
+.ourteamsubheader {
+  color: #ffffff;
+}
+
+#blogs {
+  margin-top: 200px;
+  width: 930px;
+  height: fit-content;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 245, 245, 0.75) 0%,
+    #ffffff 0%,
+    rgba(245, 245, 245, 0.75) 100%
+  );
+  box-shadow: 0px 4px 34px 1px rgba(0, 0, 0, 0.25),
+    inset 0px 4px 30px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 51px;
+}
+#view-all {
+  background: linear-gradient(180deg, #373737 0%, #181818 97.18%);
+  box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.32);
+  border-radius: 100px;
+  width: 183.96px;
+  height: 51px;
+}
+#view-all-text {
+  width: 105px;
+  height: 26px;
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #ffffff;
+}
+#latest-news {
+  width: 472px;
+  height: 60px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 88px;
+  text-align: right;
+  color: #222222;
+  text-decoration: underline;
+}
+
+#view-all-top {
+  margin: 5px 0px 40px 0px;
+
+}
+
+#view-all-row{
+  margin-left: 80px;
 }
