@@ -1,8 +1,8 @@
 #info {
-  margin-top: 20px;
+  margin-top: 3vh;
+  margin-bottom: 1vh;
   display: block;
   position: relative;
-  margin: 0px auto;
   width: 25rem;
   padding: 10px;
   border: none;
@@ -14,16 +14,15 @@
 }
 #map {
   position: absolute;
-  margin-top: 7px;
-  height: 50vh;
-  width: 50rem;
+  margin-top: 10vh;
+  height: 40vh;
+  width: 80vw;
+  margin-bottom: 5vh;
 }
 
 .container {
   margin-top: 4vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 125vh;
 }
 
 .form {

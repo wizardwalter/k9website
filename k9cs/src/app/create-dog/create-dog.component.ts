@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { environment } from '../_enviroment/env.js';
 import { DogServiceService } from '../shared/dog-service.service';
 
@@ -21,12 +23,22 @@ export class CreateDogComponent implements OnInit {
       center: [-98, 35],
       zoom: 2,
     });
+    const geocoder = new MapboxGeocoder({
+      // Initialize the geocoder
+      accessToken: environment.mapbox.accessToken , // Set the access token
+      mapboxgl: mapboxgl, // Set the mapbox-gl instance
+      marker: false // Do not use the default marker style
+    });
+
+    // Add the geocoder to the map
+    map.addControl(geocoder);
 
     map.on('mousemove', function (e) {
       document.getElementById('info').innerHTML = JSON.stringify(
         e.lngLat.wrap()
       );
     });
+    
   }
 
   file: File;
