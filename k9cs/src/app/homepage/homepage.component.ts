@@ -28,10 +28,10 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogService.getBlogs().subscribe(
-    res=> {
-      this.blogs1 = res['blogs'];
-      this.blogs = this.blogs1.slice(this.blogs1.length - 3, this.blogs1.length);
-      this.isLoading = false;
+    async res=> {
+      this.blogs1 = await res['blogs'];
+      this.blogs = await this.blogs1.slice(this.blogs1.length - 3, this.blogs1.length);
+      this.isLoading = await false;
     })
   }
 }

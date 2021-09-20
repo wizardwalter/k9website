@@ -1,13 +1,13 @@
 <div class="wrapper">
   <div class="container-fluid">
     <div class="row d-flex justify-content-around">
-      <div class="col-sm-6">
+      <div class="col-sm-6 d-flex justify-content-center">
         <div>
           <div class="map" id="map" class="match-parent"></div>
         </div>
       </div>
 
-      <div class="col-sm-4">
+      <div class="col-sm-6 d-flex justify-content-center">
         <div id="caption">
           <div
             id="donation_header_row"
@@ -31,7 +31,7 @@
         <div *ngFor="let d of dogs" class="card col-sm-2">
           <div class=" row d-flex justify-content-center">
             <cl-image class="card-top" public-id="{{ d.image }}">
-              <cl-transformation gravity="face" height="250" width="275" crop="fill" radius="25" border="4px_solid_rgb:282828">
+              <cl-transformation gravity="face" height="250" width="275" crop="fill" radius="25" border="2px_solid_rgb:282828">
               </cl-transformation>
             </cl-image>
           </div>

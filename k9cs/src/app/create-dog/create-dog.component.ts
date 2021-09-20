@@ -38,7 +38,7 @@ export class CreateDogComponent implements OnInit {
         e.lngLat.wrap()
       );
     });
-    
+
   }
 
   file: File;
@@ -59,7 +59,7 @@ export class CreateDogComponent implements OnInit {
       };
     }
   }
-  onSubmit(formObj: NgForm) {
+  async onSubmit(formObj: NgForm) {
     let Data = {
       name: formObj.value.name,
       about: formObj.value.about,
@@ -77,7 +77,7 @@ export class CreateDogComponent implements OnInit {
     formData.append('longtitude', Data.longtitude);
     formData.append('dogObj', JSON.stringify(dogObj));
     console.log(formData);
-    this.dogService.addDog(formData).subscribe();
-    this.router.navigateByUrl('/dogs');
+    await this.dogService.addDog(formData).subscribe();
+    await this.router.navigateByUrl('/dogs');
   }
 }

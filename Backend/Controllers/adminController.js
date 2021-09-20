@@ -2,7 +2,7 @@ const { json } = require("body-parser");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Admin = require("../Models/admin");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const enviromentVariable = require("../enviroment_variables.json");
 
 module.exports.createAdmin = (req, res, next) =>{

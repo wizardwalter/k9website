@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { environment } from '../_enviroment/env.js';
 import { DogServiceService } from '../shared/dog-service.service';
 import { Dog } from '../_models/dogModel.js';
@@ -42,6 +44,16 @@ export class EditDogComponent implements OnInit {
             this.dog.coordinates.latitude,
           ],
         });
+        const geocoder = new MapboxGeocoder({
+
+          accessToken: environment.mapbox.accessToken ,
+          mapboxgl: mapboxgl,
+          marker: false
+        });
+
+        // Add the geocoder to the map
+        this.map.addControl(geocoder);
+
         // Add map controls
         this.map.addControl(new mapboxgl.NavigationControl());
         new mapboxgl.Marker()
@@ -79,7 +91,7 @@ export class EditDogComponent implements OnInit {
 
     }
   };
-    onSubmit(formObj: NgForm) {
+    async onSubmit(formObj: NgForm) {
       let Data = {
             name: formObj.value.name,
             about: formObj.value.about,
@@ -96,10 +108,8 @@ export class EditDogComponent implements OnInit {
         formData.append("longtitude", Data.longtitude);
         formData.append("userObj", JSON.stringify(dogObj));
         console.log("formData = ",formData)
-        this.dogService.editDog(this.id,formData).subscribe(res =>{
-          console.log(res)
-        });
-        this.router.navigateByUrl("/dogs");
+        await this.dogService.editDog(this.id,formData).subscribe();
+        await this.router.navigateByUrl("/dogs");
   }
 
 }

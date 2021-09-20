@@ -41,7 +41,7 @@ export class CreateBlogComponent implements OnInit {
 
     }
   };
-    onSubmit(formObj: NgForm) {
+    async onSubmit(formObj: NgForm) {
       let Data = {
         title: formObj.value.title,
         text: formObj.value.text,
@@ -57,8 +57,8 @@ export class CreateBlogComponent implements OnInit {
     formData.append("userObj", JSON.stringify(userObj));
     console.log(formData)
     console.log(this.file)
-    this.blogService.addBlog(formData).subscribe();
-    this.router.navigateByUrl("/blogs");
+    await this.blogService.addBlog(formData).subscribe();
+    await this.router.navigateByUrl("/blogs");
   }
   //   onSubmit(form: NgForm){
   //     if (form.invalid) {

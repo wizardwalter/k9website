@@ -1,6 +1,6 @@
 #aboutus {
-  width: 1200px;
-  height: 550px;
+  width: 100vw;
+  height: fit-content;
   background: linear-gradient(180deg, #3b7ab5 0%, rgba(46, 85, 161, 0.4) 100%);
   box-shadow: 0px 4px 5px 2px rgba(0, 0, 0, 0.25),
     inset 0px 4px 6px 8px rgba(0, 0, 0, 0.25);
@@ -11,16 +11,17 @@
   font-family: Montserrat;
   font-style: normal;
   font-weight: 800;
-  font-size: 56px;
+  font-size: 5vw;
   margin: 35px 0px 0px 0px;
   text-align: left;
   color: #ffffff;
+  text-align: center;
 
 }
 
 #aboutusimg {
-  width: 381.96px;
-  height: 326.61px;
+  width: 33vw;
+  height: 33vh;
   border-radius: 51px;
 }
 
@@ -40,7 +41,7 @@
 }
 .icon{
   color: #ffffff;
-  font-size: 60px;
+  font-size: 5vw;
   margin-left: 60px;
   }
 .contact-span{
@@ -49,7 +50,7 @@ height: 35px;
 font-family: Montserrat;
 font-style: italic;
 font-weight: 900;
-font-size: 30px;
+font-size: 2vw;
 line-height: 37px;
 color: #FFFFFF;
 margin-left: 45px;
@@ -59,5 +60,5 @@ margin-left: 45px;
   height: 600px;
 }
 #address{
-  font-size: 24px;
+  font-size: 2vw;
 }

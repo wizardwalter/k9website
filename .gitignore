@@ -2,4 +2,6 @@
 /k9cs/node_modules
 node_modules
 /k9cs/src/app/_enviroment
-/Backend/config
+/Backend/config/config.js
+/Backend/config/config.json
+/Backend/config/cloudinary_config.js

@@ -1,6 +1,6 @@
 <div id="navbar" class="wrapper">
   <div id="navbar-row" class="row d-flex justify-content-center">
-    <div class="col col-sm-6 d-xl-none justify-content-start">
+    <div class="col-3 d-xl-none justify-content-around">
       <li class="user">
         <a class="dropbtn" >
           <i (click)="UserDropdown()"
@@ -17,7 +17,7 @@
             <a href="/dogs">Graduates</a>
           </li>
           <li>
-            <a href="/aboutus">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </li>
           <li>
             <a href="/donate">Donate</a>
@@ -25,29 +25,30 @@
         </ul>
       </li>
     </div>
-    <div id="donate" class="col-sm-2 align-items-around d-none d-xl-block">
-      <div class="row">
-        <div class="col-sm-7 align-items-center justify-content-center">
+    <div class="col-1"></div>
+    <div id="donate" class="col-2 align-items-around justify-content-center d-none d-xl-block">
+      <div class="row d-flex justify-content-center">
+
           <button href="/donate" id="donate_button" class="nav_buttons">
             <a href="/donate">DONATE</a>
           </button>
-        </div>
         <button id="graduates_button" class="inner_buttons"><a href="/dogs">GRADUATES</a></button>
+
       </div>
     </div>
-    <div class="col-xl-4 col-sm-1 d-flex align-items-end justify-content-center">
+    <div class="col-xl-4 col-4 d-flex align-items-end justify-content-center">
       <a id="logo" class="navbar-brand" href="/"
         ><img
           src="https://res.cloudinary.com/walterscloudinary/image/upload/v1627942087/k9cs/Logo_nixy5y.png"
       /></a>
     </div>
-    <div id="contact" class="col-sm-2 align-items-around d-none d-xl-block">
-      <div class="row">
+    <div id="contact" class="col-2 align-items-around justify-content-center d-none d-xl-block">
+      <div class="row d-flex justify-content-center">
         <button id="contact_button" class="nav_buttons"><a href="/contact">CONTACT</a></button>
         <button id="news_button" class="inner_buttons"><a href="/blogs">NEWS</a></button>
       </div>
     </div>
-    <div class="col col-sm-1">
+    <div class="col-3 col-xl-1">
       <button *ngIf="islogin" (click)="logout()" id="logout" class="btn btn-sm">Logout</button>
     </div>
   </div>

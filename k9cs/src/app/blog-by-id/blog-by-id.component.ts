@@ -14,7 +14,7 @@ import { Blog } from '../_models/blog';
 export class BlogByIdComponent implements OnInit {
   blog:Blog;
   id;
- 
+
 
   constructor(public BlogService: BlogServiceService, public activatedRoute: ActivatedRoute, public router: Router) { }
 
@@ -46,7 +46,7 @@ export class BlogByIdComponent implements OnInit {
 
     }
   };
-    onSubmit(formObj: NgForm) {
+    async onSubmit(formObj: NgForm) {
       let Data = {
             title: formObj.value.title,
             text: formObj.value.text,
@@ -61,9 +61,9 @@ export class BlogByIdComponent implements OnInit {
         formData.append("author", Data.author);
         formData.append("userObj", JSON.stringify(userObj));
         console.log("formData = ",formData)
-        this.BlogService.editBlog(this.id,formData).subscribe(res =>{
+        await this.BlogService.editBlog(this.id,formData).subscribe(res =>{
           console.log(res)
         });
-        this.router.navigateByUrl("/blogs");
+        await this.router.navigateByUrl("/blogs");
   }
 }

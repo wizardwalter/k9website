@@ -1,6 +1,6 @@
 img {
-  width: 255px;
-  height: 255px;
+  width: 200px;
+  height: 200px;
   border: none;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 2;
@@ -13,14 +13,13 @@ img {
 
 #contact {
   width: 300px;
-  height: 121px;
+  height: 115px;
   background: linear-gradient(157.12deg, #5b8edb 14.84%, #2e55a2 86.24%);
   border: 5px solid #1f447a;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 14px 9px rgba(0, 0, 0, 0.25);
   border-radius: 60px;
-  margin-top: 30px;
-  margin-left: 40px;
+  margin-top: 25px;
   z-index: 2;
 }
 #contact_button {
@@ -28,14 +27,13 @@ img {
     -1px 1px 0 #5488d7;
   margin-top: 15px;
   text-align: center;
-  left: 70;
 }
 
 .nav_buttons {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 78px;
   color: #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,17 +57,13 @@ img {
   background: linear-gradient(180deg, #373737 0%, #181818 97.18%);
   box-shadow: 0px 0px 23px rgba(0, 0, 0, 0.32);
   border-radius: 100px;
-  top: 35px;
-  position: absolute;
 }
 
 #graduates_button {
   width: 183.96px;
   height: 51px;
   z-index: 3;
-  position: absolute;
-  margin-top: 100px;
-  left: 185px;
+  margin-top: 25px;
 }
 
 a{
@@ -97,35 +91,32 @@ a{
   position: absolute;
   width: 107px;
   height: 32px;
-  left: 5px;
-  top: 20px;
 }
 
 #news_button {
   width: 183.96px;
   height: 51px;
-  position: absolute;
   z-index: 3;
-  margin-top: 100px;
-  left: -70px;
+  margin-top: 25px;
+
 }
 
 #donate_button {
   text-shadow: 1px 1px #d75454, -1px -1px 0 #d75454, 1px -1px 0 #d75454,
     -1px 1px 0 #d75454;
   margin-top: 13px;
-  margin-left: 22px;
+  text-align: center;
 }
 
 #donate {
   width: 300px;
-  height: 121px;
+  height: 115px;
   background: linear-gradient(157.12deg, #992b2b 14.84%, #671818 86.24%);
   border: 5px solid #501919;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
     inset 0px 4px 14px 9px rgba(0, 0, 0, 0.25);
   border-radius: 60px;
-  margin-top: 30px;
+  margin-top: 25px;
   z-index: 2;
 }
 
@@ -194,7 +185,4 @@ li a {
   align-self: center;
   padding: 0;
   z-index: 3;
-}
-#navbar-row{
-  margin-left: 120px;
 }
