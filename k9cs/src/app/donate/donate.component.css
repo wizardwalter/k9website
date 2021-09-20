@@ -100,19 +100,6 @@ text-align: center;
 color: #FFFFFF;
 width: 60vw;
 }
-#amazon-para2{
-margin-top: 7px;
-width: 837px;
-height: 107px;
-font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 1.5vw;
-line-height: 25px;
-text-align: center;
-color: #FFFFFF;
-margin-bottom: 10px;
-}
 #amazon-span{
   margin-left: 5vw;
   font-family: Montserrat;
@@ -120,4 +107,7 @@ margin-bottom: 10px;
   font-weight: 800;
   font-size: 40px;
   color: #FFFFFF;
+}
+#donate-a-tag{
+  text-decoration: none;
 }
