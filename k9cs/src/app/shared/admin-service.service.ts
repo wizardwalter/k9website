@@ -28,10 +28,10 @@ export class AdminServiceService {
     return this.isAuthenticated;
   }
 
-  async login(email: string, password: string) {
+   login(email: string, password: string) {
     const authData: Admin = { email: email, password: password };
     this.isLoading = true;
-     return await this.http
+     return  this.http
       .post<{ token: string, expiresIn:number}>(this.baseUrl + '/admin', authData)
       .subscribe(res => {
         const token = res.token;
