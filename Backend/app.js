@@ -34,7 +34,7 @@ app.use("/admin", adminRoute);
 
 
 
-app.listen(process.env.port, () =>{
+app.listen(process.env.PORT || 8080, () =>{
     console.log(`Server is listening on port: ${process.env.port}`)
 })
 
